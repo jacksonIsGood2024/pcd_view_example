@@ -47,6 +47,8 @@ const ThreeDScene = () => {
           polyGeometry.setAttribute(
             "position",
             new THREE.Float32BufferAttribute(updatedVertices.map((coord) => [coord.x, coord.y, 5]).flat(), 3)
+
+
           );
           currentPolygon.geometry.dispose(); // Dispose of the old geometry
           currentPolygon.geometry = polyGeometry;
@@ -161,7 +163,7 @@ const ThreeDScene = () => {
       setPolygonVertices(updatedVertices);
 
       // Update vertex markers position
-      vertexMarkers[selectedVertexIndex].position.set(point.x, point.y, 5);
+      // vertexMarkers[selectedVertexIndex].setAttribute("position", new THREE.Vector3(point.x, point.y, 5));
 
       // Update polygon geometry
       if (currentPolygon) {
